@@ -1,0 +1,32 @@
+<div class="container" ng-controller="AnswerCtrl">
+
+  <h1>Answer to the Tweet</h1>
+
+  <div class="well" >
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="Name" ng-model="name">
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" class="form-control" placeholder="Email"  ng-model="email">
+      </div>
+
+      <textarea class="form-control" placeholder="Message" rows="3" ng-model="message"></textarea><br>
+
+      <div><button class="btn btn-primary pull-right" ng-click="answer()"><i class="fa fa-facebook-official"></i> Reply</button></div><br>
+    </form>
+  </div>
+
+  <div class="well" ng-repeat="tweet in answers | orderBy:'-date'" >
+    <a href="#/tweet/{{tweet.id}}">
+      <img ng-src="http://www.gravatar.com/avatar/{{tweet.authorEmailHash}}?d=retro" class=" img pull-left"/>
+    </a>
+    <b>{{tweet.authorName}}</b>
+    <p>{{tweet.message}}</p>
+    <a ng-click="reply()">reply</a>
+    <div class="pull-right date">{{timestampToRelativeDate(tweet.date)}}</div>
+    </a>
+  </div>
+</div>

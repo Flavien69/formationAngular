@@ -1,0 +1,135 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "components-font-awesome/scss/font-awesome.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* custom css */
+$font-stack: Helvetica, sans-serif;
+$green-color: #5db5a4;
+$white-color: #fff;
+
+$font-size-title: 25px;
+$padding-title: 15px;
+
+$break-small: 480px;
+$break-medium: 780px;
+$break-large: 1024px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.box {
+  background-color: $green-color;
+  margin: 15px;
+  padding: 10px;
+  @include border-radius(5px);
+
+  .title{
+    color: $white-color;
+    font-size: $font-size-title;
+    padding: $padding-title;
+  }
+
+  .content{
+    padding: 15px;
+    background-color: $white-color;
+    @include border-bottom-radius(5px);
+  }
+
+  .hello {
+
+    color: $white-color;
+    font-weight: bold;
+
+    .description {
+      color: #aaa;
+    }
+  }
+}
+
+.section{
+  text-align: center;
+
+  h3 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  h3:hover{
+    color: $green-color;
+  }
+
+  .content {
+    color:#808080;
+  }
+}
+
+.date {
+  color:#808080;
+  padding-bottom: 15px;
+}
+
+.img {
+  margin-right: 10px;
+}
+
+@media (max-width: $break-small) {
+  .background {
+    min-height: 200px;
+    width: 100%;
+    background: url(../images/background480.jpg) no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: $break-small) and (max-width: $break-medium) {
+  .background {
+    min-height: 200px;
+    width: 100%;
+    background: url(../images/background720.jpg) no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: $break-medium) and (max-width: $break-large) {
+  .background {
+    min-height: 200px;
+    width: 100%;
+    background: url(../images/background1024.jpg) no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  .background {
+    min-height: 200px;
+    width: 100%;
+    background: url(../images/background1920.jpg) no-repeat center center;
+    background-size: cover;
+  }
+}
+
+

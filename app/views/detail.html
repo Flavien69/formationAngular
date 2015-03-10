@@ -1,0 +1,16 @@
+<div class="container" ng-controller="DetailCtrl">
+  <div class="box row">
+    <div class="col-sm-5">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+        <input ng-model="searchText" type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+      </div>
+    </div>
+    <div class="col-sm-7">
+      Filtered with <b>{{searchText}}</b>
+      <ul class="hello">
+        <li ng-repeat="hello in hellos | filter:searchText"><i class="fa fa-quote-left"></i> {{hello.title}} <span class="description">{{hello.description}}</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
